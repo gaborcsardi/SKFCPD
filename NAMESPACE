@@ -1,0 +1,48 @@
+useDynLib(SKFCPD, .registration=TRUE)
+
+# Import
+#import("Rcpp", "methods", "rlang", "stats", "utils", "dplyr", "ggplot2", "ggpubr", "reshape2")
+importFrom("Rcpp", "evalCpp")
+importFrom("rlang", ".data")
+importFrom("graphics","legend","plot")
+importFrom("methods", "new")
+importFrom("stats", "optim")
+importFrom("utils", "head")
+importFrom("reshape2", "melt")
+importFrom("ggplot2", "ggplot", "aes", "geom_line", "theme_bw", "geom_vline", "geom_tile",
+           "scale_fill_gradient", "guide_colourbar", "element_text", "xlab", "ylab",
+           "scale_y_continuous", "theme")
+importFrom("ggpubr", "ggarrange")
+importFrom("FastGaSP", "fgasp")
+
+
+# Exports
+exportPattern("^[[:alpha:]]+")
+export(SKFCPD)
+export(plot_SKFCPD)
+export(Estimate_GP_params)
+#fgasp,
+#CPD_DLM,
+#compute_log_lik,
+#get_mu_sigma_hat,
+#Get_log_det_S2,
+#Construct_W0_matern_5_2,
+#Construct_G_matern_5_2,
+#Construct_W_matern_5_2,
+#Construct_G_matern_5_2_fastGP,
+#Construct_W_matern_5_2_fastGP,
+#Construct_W0_exp,
+#Construct_G_exp_fastGP,
+#Construct_W_exp_fastGP,
+#Construct_G_W_W0_V,
+#Get_Q_K,
+#KF_ini,
+#KF_ini_for_profile_like,
+#get_LY_online,
+#KF_param_update_for_profile_like,
+#get_predictive_dist_KF_objective_prior,
+#GaSP_CPD_pred_dist_objective_prior_KF_online
+#exportMethods(plot)
+exportClasses(Estimated_GP_params,SKFCPD)
+#S3method(plot,SKFCPD)
+
